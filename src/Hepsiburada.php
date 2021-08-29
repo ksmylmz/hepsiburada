@@ -1,7 +1,7 @@
 <?php
 namespace ksmylmz\hepsiburada;
 
-use yii\base\Component;
+
 use ksmylmz\hepsiburada\service\OrderService;
 use ksmylmz\hepsiburada\service\ListingService;
 use ksmylmz\hepsiburada\service\ProductService;
@@ -10,7 +10,7 @@ use ksmylmz\hepsiburada\service\ReturnService;
 use ksmylmz\hepsiburada\service\FinanceService;
 use ksmylmz\hepsiburada\config\Credentials;
 
-class Hepsiburada extends Component
+class Hepsiburada 
 {
     public $category;
     public $product;
@@ -22,19 +22,18 @@ class Hepsiburada extends Component
     public $password;
     public $merchantId;
     public $isTestStage;
-    function init()
+    public  function __construct($username,$password,$merchantI,$isTestStage=true)
     {        
-        $credentials = new Credentials([
-            'username'=>$this->username,
-            'password'=>$this->password,
-            'merchantId'=>$this->merchantId
-        ]);
-        $this->category = new CategoryService($this->isTestStage,$credentials);
-        $this->product = new ProductService($this->isTestStage,$credentials);
-        $this->order = new OrderService($this->isTestStage,$credentials);
-        $this->listing = new ListingService($this->isTestStage,$credentials);
-        $this->return = new ReturnService($this->isTestStage,$credentials);
-        $this->finance = new FinanceService($this->isTestStage,$credentials);
+        $credentials = new Credentials();
+        $credentials->username=$username;
+        $credentials->password=$password;
+        $credentials->merchantId=$merchantI;
+        $this->category = new CategoryService($isTestStage,$credentials);
+        $this->product = new ProductService($isTestStage,$credentials);
+        $this->order = new OrderService($isTestStage,$credentials);
+        $this->listing = new ListingService($isTestStage,$credentials);
+        $this->return = new ReturnService($isTestStage,$credentials);
+        $this->finance = new FinanceService($isTestStage,$credentials);
     }
     
 

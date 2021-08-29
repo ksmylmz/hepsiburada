@@ -1,9 +1,7 @@
 <?php
 namespace ksmylmz\hepsiburada\service;
-use yii\base\Model;
-use yii\helpers\Json;
 use ksmylmz\hepsiburada\config\Endpoints;
-use ksmylmz\hepsiburada\config\Credentials;
+
 use ksmylmz\hepsiburada\models\requestmodels\BaseGetRequestModel;
 use ksmylmz\hepsiburada\models\requestmodels\returns\AwaitClaimRequestModel;
 use ksmylmz\hepsiburada\models\requestmodels\returns\ClaimRejectionRequestmodel;
@@ -33,7 +31,7 @@ class ReturnService extends HepsiburadaBaseService
     {
         $url  = $this->getUrl(Endpoints::claim,Endpoints::rejectClaim);
         $url = $this->replaceParameters(["@number"=>$claimNumber],$url); 
-        $payload = ["body"=> Json::encode($claimRejectRequest)];    
+        $payload = ["body"=> \json_encode($claimRejectRequest)];    
         return $this->request("POST",$url,$payload);
     }      
     /**
@@ -73,7 +71,7 @@ class ReturnService extends HepsiburadaBaseService
     public function AwaittingActions(AwaitClaimRequestModel $awaitActionRequest)
     {
         $url  = $this->getUrl(Endpoints::claim,Endpoints::awaitingActions);
-        $payload = ["body"=>Json::encode($awaitActionRequest)];
+        $payload = ["body"=>\json_encode($awaitActionRequest)];
         return $this->request("POST",$url,$payload);
 
     }

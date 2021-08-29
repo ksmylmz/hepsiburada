@@ -1,10 +1,7 @@
 <?php
 namespace ksmylmz\hepsiburada\service;
 
-use yii\base\Model;
-use yii\helpers\Json;
 use ksmylmz\hepsiburada\config\Endpoints;
-use ksmylmz\hepsiburada\config\Credentials;
 use ksmylmz\hepsiburada\models\requestmodels\BaseGetRequestModel;
 use ksmylmz\hepsiburada\models\requestmodels\order\PackageItemsRequestModel;
 use ksmylmz\hepsiburada\models\requestmodels\order\SendDeliveryStatusRequestModel;

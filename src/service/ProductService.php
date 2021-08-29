@@ -1,9 +1,6 @@
 <?php
 namespace ksmylmz\hepsiburada\service;
 
-use ksmylmz\hepsiburada\config\Credentials;
-use yii\base\Model;
-use yii\helpers\Json;
 use ksmylmz\hepsiburada\config\Endpoints;
 use ksmylmz\hepsiburada\models\requestmodels\product\GetProductInfoViaStatusRequestModel;
 
@@ -18,7 +15,7 @@ class ProductService extends HepsiburadaBaseService
     public function createProduct($HbProduct)
     {
         $url  = $this->getUrl(Endpoints::catalog,Endpoints::createProduct);
-        $payload = ['body'=> Json::encode($HbProduct)];        
+        $payload = ['body'=> \json_encode($HbProduct)];        
         return $this->request("POST",$url,$payload);
         
     }
@@ -48,7 +45,7 @@ class ProductService extends HepsiburadaBaseService
     {
 
         $url = $this->getUrl(Endpoints::catalog,Endpoints::getProductStatuses);
-        $payload = ['body'=> Json::encode($statuList)];        
+        $payload = ['body'=> \json_encode($statuList)];        
         return $this->request("POST",$url,$payload);
     }    
     /**

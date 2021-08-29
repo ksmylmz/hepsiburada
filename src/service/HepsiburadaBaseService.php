@@ -1,8 +1,6 @@
 <?php
 namespace ksmylmz\hepsiburada\service;
 
-use Yii;
-use yii\helpers\Json;
 use GuzzleHttp\Client;
 use ksmylmz\hepsiburada\config\Endpoints;
 use ksmylmz\hepsiburada\config\Credentials;
@@ -64,7 +62,9 @@ class HepsiburadaBaseService
     }
     public function initTokken()
     {
-        $this->token = Yii::$app->cache->get("{$this->token_prefix}_auth_token");
+        $this->token = false;
+        //$app->cache->get("{$this->token_prefix}_auth_token");
+        //bu noktada cache kullanmak faydalı olabilir
         if(!$this->token) $this->setToken();
 
     }
@@ -84,7 +84,7 @@ class HepsiburadaBaseService
             if($_response->getStatusCode()!=200) throw $_response->getStatusCode();
             $this->token = $_response_body["id_token"];
             ///Hepsiburada servisi için max token süresi 30 dk(garanti olsun diye 25)
-            Yii::$app->cache->set("{$this->token_prefix}_auth_token",25*60);
+           // $app->cache->set("{$this->token_prefix}_auth_token",25*60);
         } catch (RequestException $th) {
             $msg = $th->getMessage();
             throw new Exception("Token Alma denemesi başarısız : {$msg}");
@@ -148,11 +148,11 @@ class HepsiburadaBaseService
     /**
      * generateQueryString
      *
-     * @param  yii\base\Model $unknownmodel
+     * @param   $unknownmodel
      * @param  boolean $modelvalidation
      * @return void
      */
-    protected function generateQueryString(yii\base\Model $unknownmodel)
+    protected function generateQueryString($unknownmodel)
     {
         if(!$unknownmodel->validate())
         {

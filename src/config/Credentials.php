@@ -2,9 +2,8 @@
 
 namespace ksmylmz\hepsiburada\config;
 
-use yii\base\Model;
 
-class Credentials extends Model
+class Credentials  
 {    
     /**
      * username

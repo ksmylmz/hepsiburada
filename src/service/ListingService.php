@@ -1,10 +1,7 @@
 <?php
 namespace ksmylmz\hepsiburada\service;
 
-use ksmylmz\hepsiburada\config\Credentials;
-use yii\base\Model;
 use SimpleXMLElement;
-use yii\helpers\Json;
 use ksmylmz\hepsiburada\config\Endpoints;
 use ksmylmz\hepsiburada\models\requestmodels\BaseGetRequestModel;
 

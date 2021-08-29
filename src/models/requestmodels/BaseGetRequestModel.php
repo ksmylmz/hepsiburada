@@ -1,9 +1,7 @@
 <?php
 namespace ksmylmz\hepsiburada\models\requestmodels;
 
-use yii\base\Model;
-
-class BaseGetRequestModel extends Model
+class BaseGetRequestModel 
 {    
     /**
      * page
