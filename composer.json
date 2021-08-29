@@ -1,8 +1,7 @@
 {
     "name": "ksmylmz/hepsiburada",
-    "description": "Yii2 Hepsiburada Entegrasyon pakedi",
-    "type": "yii2-extension",
-    "keywords": ["yii2","extension"],
+    "description": "Hepsiburada Entegrasyon pakedi",
+    "keywords": ["hepsiburada","integration"],
     "license": "MIT",
     "authors": [
         {

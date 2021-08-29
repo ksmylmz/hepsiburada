@@ -5,7 +5,6 @@ Hepsiburada Servis Modülü
 Hepsiburada WEb Servisi ile iletişim katmanı özelliği olan bu 
 servis hazırlanırken [Hepsiburada Resmi dökümanyasyon](https://developers.hepsiburada.com/)unndan faydalanılmıştır
 
-Modül Yii2 frameworkü için component olarka hazırlanmışır. 
 request işlemleri için Guzzle Kullanılmıştır. 
 
 ## Kurulum 
