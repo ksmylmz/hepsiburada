@@ -11,28 +11,25 @@ request işlemleri için Guzzle Kullanılmıştır.
 ________
 
 
-### 1- Component olarka ekleme 
-````php
-    'components' => [
-        ......
-        'hepsiburada' => [
-            'class' => 'ksmylmz\hepsiburada\Hepsiburada',
-            'username' => "{$username}", //HB tarafından sağlanan username
-            'password' => "{$password}", //HB tarafından sağlanan pasword
-            'merchantId' => "{$merchantId}", //HB tarafından verilen satıcı numarası
-            'isTestStage' => true, //prod için false
-        ]
-        ......
-    ],
+### 1- Paketi projeye dahil etme
+
+psr-4 standartlarına uyan herhangi bir yapı ile birlikte kullanılabilir. 
+
+````
+    composer require ksmylmz/hepsiburada
+
 ````
 
 
 ### 2- Örnek Kullanım
 
-````
- $hb  = Yii::$app->hepsiburada;
- $categoryID = "123456";
- $hb->category->getCategoryAttributes($categoryID);
+````php
+use ksmylmz\trendyol\Trendyol;
+......
+$isTeststage = true;
+$trendyol  = new Trendyol({username},{password},{merchantid},$isTestStage);
+$categoryID = "123456";
+$hb->category->getCategoryAttributes($categoryID);
 ````
 
 ### 3-Dönen değeri değerlendirme (Handle)

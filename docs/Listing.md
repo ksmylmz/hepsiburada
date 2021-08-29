@@ -5,7 +5,10 @@ _________________
 ### 1- Init Object for Usage
 
 ````php
-$hb  = Yii::$app->hepsiburada;
+use ksmylmz\trendyol\Trendyol;
+......
+$isTeststage = true;
+$trendyol  = new Trendyol({username},{password},{merchantid},$isTestStage);
 ````
 <br/>
 <br/>

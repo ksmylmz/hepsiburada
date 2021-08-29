@@ -22,12 +22,12 @@ class Hepsiburada
     public $password;
     public $merchantId;
     public $isTestStage;
-    public  function __construct($username,$password,$merchantI,$isTestStage=true)
+    public  function __construct($username,$password,$merchantId,$isTestStage=true)
     {        
         $credentials = new Credentials();
         $credentials->username=$username;
         $credentials->password=$password;
-        $credentials->merchantId=$merchantI;
+        $credentials->merchantId=$merchantId;
         $this->category = new CategoryService($isTestStage,$credentials);
         $this->product = new ProductService($isTestStage,$credentials);
         $this->order = new OrderService($isTestStage,$credentials);
