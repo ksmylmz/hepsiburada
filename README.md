@@ -24,10 +24,10 @@ psr-4 standartlarına uyan herhangi bir yapı ile birlikte kullanılabilir.
 ### 2- Örnek Kullanım
 
 ````php
-use ksmylmz\trendyol\Trendyol;
+use ksmylmz\hepsiburada\Hepsiburada;
 ......
 $isTeststage = true;
-$trendyol  = new Trendyol({username},{password},{merchantid},$isTestStage);
+$hb  = new Hepsiburada({username},{password},{merchantid},$isTestStage);
 $categoryID = "123456";
 $hb->category->getCategoryAttributes($categoryID);
 ````

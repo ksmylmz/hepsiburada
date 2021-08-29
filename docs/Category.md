@@ -5,10 +5,10 @@ _________________
 ### 1- Init Object for Usage
 
 ````php
-use ksmylmz\trendyol\Trendyol;
+use ksmylmz\hepsiburada\Hepsiburada;
 ......
 $isTeststage = true;
-$trendyol  = new Trendyol({username},{password},{merchantid},$isTestStage);
+$hb  = new Hepsiburada({username},{password},{merchantid},$isTestStage);
 ````
 
 ### 2- Tüm Kategori Bilgilerini getirme 
