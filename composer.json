@@ -1,0 +1,21 @@
+{
+    "name": "ksmylmz/hepsiburada",
+    "description": "Yii2 Hepsiburada Entegrasyon pakedi",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kasım YILMAZ",
+            "email": "kasim-yilmaz@hotmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ksmylmz\\hepsiburada\\": "src"
+        }
+    }
+}
